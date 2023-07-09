@@ -6,12 +6,12 @@
 # 100 -> 1 (1 + 0 + 0) 
 
 
-number = (input('Введите трехзначное число: '))
-first_number = int(number[0])
-second_number = int(number[1])
-third_number = int(number[2])
-result = first_number + second_number + third_number
-print(result)
+#number = (input('Введите трехзначное число: '))
+#first_number = int(number[0])
+#second_number = int(number[1])
+#third_number = int(number[2])
+#result = first_number + second_number + third_number
+#print(result)
 
 
 # Задача 4: Петя, Катя и Сережа делают из бумаги журавликов. Вместе они сделали S журавликов.
@@ -26,11 +26,11 @@ print(result)
 #     60 -> 10  40  10
 
 
-number = int(input('Ведите четное число:'))
-katja = number // 3 * 2
-serjoza = katja // 2 // 2
-petja = serjoza
-print(f"Сережа {serjoza} Катя {katja}  Петя {petja} ")
+#number = int(input('Ведите четное число:'))
+#katja = number // 3 * 2
+#serjoza = katja // 2 // 2
+#petja = serjoza
+##print(f"Сережа {serjoza} Катя {katja}  Петя {petja} ")
 
 
 # Задача 6: Вы пользуетесь общественным транспортом? 
@@ -45,13 +45,13 @@ print(f"Сережа {serjoza} Катя {katja}  Петя {petja} ")
 # 385916 -> yes
 # 123456 -> no
 
-number = input('Введите шестизначное число: ')
-first_part = int(number[0]) + int(number[1]) + int(number[2])
-second_part = int(number[3]) + int(number[4]) + int(number[5])
-if first_part == second_part:
-    print('yes')
-else:
-    print('no')
+#number = input('Введите шестизначное число: ')
+#first_part = int(number[0]) + int(number[1]) + int(number[2])
+#second_part = int(number[3]) + int(number[4]) + int(number[5])
+#if first_part == second_part:
+#    print('yes')
+#else:
+#    print('no')
 
 
 
@@ -64,4 +64,49 @@ else:
 # 3 2 4 -> yes
 # 3 2 1 -> no
 
-НЕ ПОНЯЛ КАК РЕШАТЬ()
+
+
+#На столе лежат n монеток. Некоторые из них лежат вверх решкой, а некоторые – гербом. 
+#Определите минимальное число монеток, которые нужно перевернуть, 
+#чтобы все монетки были повернуты вверх одной и той же стороной. 
+#Выведите минимальное количество монет, которые нужно переверну
+
+#from random import randint
+
+num = int(input("Введите количестов монеток: "))
+heads = 0
+tails = 0
+
+for i in range(num):
+    coins = randint(0,1)
+    print(coins, end = ' ')
+    if coins == 1:
+        heads +=1
+    if coins == 0:
+        tails +=1
+print(f'всего монет {heads, tails}')
+if heads > tails:
+    ans = tails
+else:
+    ans = heads
+print(f"минимальное количество монет, которые нужно перевернуть {ans}")
+
+#Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
+#Петя помогает Кате по математике. Он задумывает два натуральных числа X и Y (X,Y≤1000), 
+#а Катя должна их отгадать. Для этого Петя делает две подсказки. 
+#Он называет сумму этих чисел S и их произведение P. Помогите Кате отгадать задуманные Петей числа.
+
+S = int(input('Введите сумму чисел: '))
+P = int(input('Введите произведение чисел: '))
+X = (S-int((S**2-4*P)**0.5))//2
+Y = S - X
+if X<=1000 and Y<=1000:
+    print(f'числа задуманные Петей{X, Y}')
+
+
+#Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
+num = int(input('Введите целое число больше 1: '))
+k=1
+while k<=num:
+     print(k,end=' ')
+     k=k*2
